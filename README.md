@@ -1,3 +1,22 @@
+---
+tags:
+- ai-governance
+- eu-ai-act
+- compliance
+- audit-trail
+- jep
+- accountability
+- transparency
+- event-logging
+- markdown
+license: cc0-1.0
+language:
+- en
+- zh
+size_categories:
+- n<1K
+---
+
 # JEP EU Multi-Industry Compliance Extensions
 
 **Repository**: `cognitiveemergencelab/jep-eu-compliance`  
@@ -128,3 +147,5 @@ See `DISCLAIMER.md` for full text.
 
 Yuqiang Wang | yuqiang@humanjudgment.org | https://humanjudgment.org
 ```
+
+---
