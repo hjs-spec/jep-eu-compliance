@@ -9,7 +9,23 @@ tags:
 - transparency
 - event-logging
 - markdown
-license: cc0-1.0
+license: mit
+language:
+- en
+size_categories:
+- n<1K
+---
+tags:
+- ai-governance
+- eu-ai-act
+- compliance
+- audit-trail
+- jep
+- accountability
+- transparency
+- event-logging
+- markdown
+license: mit
 language:
 - en
 size_categories:
@@ -19,7 +35,7 @@ size_categories:
 # JEP EU Multi-Industry Compliance Extensions
 
 **Repository**: `cognitiveemergencelab/jep-eu-compliance`  
-**License**: CC0 1.0 Universal — JEP belongs to the public domain.  
+**License**: MIT  
 **Version**: 1.0.0  
 **Date**: 2026-04-24
 
@@ -64,15 +80,17 @@ This repository provides EU AI Act (Regulation (EU) 2024/1689) compliance mappin
 ```
 jep-eu-compliance/
 ├── README.md
-├── EU_AI_ACT_MAPPING.md          # Regulation article ↔ JEP primitive mapping
-├── DISCLAIMER.md                 # Legal disclaimer (MUST READ)
+├── README.zh.md                 # 中文版本
+├── EU_AI_ACT_MAPPING.md         # Regulation article ↔ JEP primitive mapping
+├── DISCLAIMER.md                # Legal disclaimer (MUST READ)
+├── LICENSE                      # MIT License
 └── extensions/
-    ├── medical.md                # Annex I + III (biometrics/diagnosis)
-    ├── fintech.md                # Annex III (5)(b) — credit scoring
-    ├── automotive.md             # Annex III (2) — traffic safety
-    ├── hr.md                     # Annex III (4)(a) — recruitment
-    ├── governance.md             # Art. 50 — chatbots, deepfakes, public service
-    └── critical-infra.md         # Annex III (2) — energy, water, transport
+    ├── medical.md               # Annex I + III (biometrics/diagnosis)
+    ├── fintech.md               # Annex III (5)(b) — credit scoring
+    ├── automotive.md            # Annex III (2) — traffic safety
+    ├── hr.md                    # Annex III (4)(a) — recruitment
+    ├── governance.md            # Art. 50 — chatbots, deepfakes, public service
+    └── critical-infra.md        # Annex III (2) — energy, water, transport
 ```
 
 ---
