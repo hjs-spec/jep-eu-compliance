@@ -125,5 +125,3 @@ Key obligations:
     }
   }
 }
-```
-```
