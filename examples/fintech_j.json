@@ -1,0 +1,28 @@
+{
+  "jep": "1",
+  "verb": "J",
+  "who": "did:example:tmp:credit-ai-agent",
+  "when": 1742345678,
+  "what": "sha256:score-output-hash-abc123def456789012345678901234567890abcd",
+  "nonce": "a1b2c3d4-5678-4abc-8ef0-123456789abc",
+  "aud": "https://bank.example.com",
+  "ref": null,
+  "sig": "eyJhbGciOiJFZERTQSJ9...",
+  "extensions": {
+    "https://jep.org/priv/digest-only": {
+      "identity_digest": "sha256:9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8",
+      "salt_provider": "did:example:hjs-trusted-anchor"
+    },
+    "https://jep-eu-compliance.org/industry/fintech": {
+      "decision_type": "credit_scoring",
+      "model_version_hash": "sha256:model-v2-1-manifest-hash-1234567890abcdef",
+      "feature_importance_hash": "sha256:shap-values-hash-fedcba0987654321",
+      "adverse_action_notice": true,
+      "gdpr_art22_compliant": true,
+      "applicant_consent_hash": "sha256:consent-record-hash-abcdef1234567890",
+      "bias_audit_flag": false,
+      "human_loan_officer_did": "did:example:tmp:officer-789",
+      "explanation_hash": "sha256:explanation-text-hash-1234567890abcdef"
+    }
+  }
+}
