@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://jep-eu-compliance.org/schemas/automotive.schema.json",
+  "title": "JEP EU Compliance — Autonomous Driving & Traffic Safety Extension",
+  "description": "JSON Schema for JEP events in autonomous driving under EU AI Act Annex III (2).",
+  "type": "object",
+  "properties": {
+    "vehicle_vin": {
+      "type": "string",
+      "description": "Salted hash of Vehicle Identification Number",
+      "pattern": "^(sha256|sm3):[a-fA-F0-9]+$"
+    },
+    "sensor_fusion_hash": {
+      "type": "string",
+      "description": "Hash of fused sensor data at decision moment",
+      "pattern": "^(sha256|sm3):[a-fA-F0-9]+$"
+    },
+    "decision_frame_id": {
+      "type": "string",
+      "description": "Unique frame identifier"
+    },
+    "odometer_km": {
+      "type": "number",
+      "description": "Odometer reading in kilometers",
+      "minimum": 0
+    },
+    "geo_hash": {
+      "type": "string",
+      "description": "Geohash of location"
+    },
+    "safety_driver_present": {
+      "type": "boolean",
+      "description": "True if human monitor in vehicle"
+    },
+    "safety_driver_did": {
+      "type": ["string", "null"],
+      "description": "DID of safety driver"
+    },
+    "operational_domain": {
+      "type": "string",
+      "description": "Autonomous driving operational domain",
+      "enum": ["highway_l3", "urban_l4", "parking_l5", "highway_l4", "mixed_l3"]
+    },
+    "adversarial_test_passed": {
+      "type": "boolean",
+      "description": "Model passed latest adversarial robustness test"
+    },
+    "safe_state_triggered": {
+      "type": "boolean",
+      "description": "True if T event triggered safe-state"
+    }
+  },
+  "required": [
+    "vehicle_vin",
+    "sensor_fusion_hash",
+    "decision_frame_id",
+    "odometer_km",
+    "geo_hash",
+    "safety_driver_present",
+    "operational_domain",
+    "adversarial_test_passed"
+  ],
+  "if": {
+    "properties": {
+      "safety_driver_present": { "const": true }
+    }
+  },
+  "then": {
+    "required": ["safety_driver_did"]
+  },
+  "additionalProperties": false
+}
