@@ -1,0 +1,29 @@
+{
+  "jep": "1",
+  "verb": "J",
+  "who": "did:example:tmp:autopilot-agent",
+  "when": 1742345678,
+  "what": "sha256:brake-decision-hash-1234567890abcdef1234567890abcdef12345678",
+  "nonce": "b2c3d4e5-6789-5bcd-9f01-234567890bcd",
+  "aud": "https://fleet.example.com",
+  "ref": null,
+  "sig": "eyJhbGciOiJFZERTQSJ9...",
+  "extensions": {
+    "https://jep.org/priv/digest-only": {
+      "identity_digest": "sha256:1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2",
+      "salt_provider": "did:example:hjs-trusted-anchor"
+    },
+    "https://jep-eu-compliance.org/industry/automotive": {
+      "vehicle_vin": "sha256:hashed-vin-1234567890abcdef1234567890abcdef123456",
+      "sensor_fusion_hash": "sha256:lidar-radar-camera-fusion-hash-fedcba098765",
+      "decision_frame_id": "frame-1742345678-001",
+      "odometer_km": 45231.7,
+      "geo_hash": "u4pruydqqvj",
+      "safety_driver_present": true,
+      "safety_driver_did": "did:example:tmp:driver-001",
+      "operational_domain": "urban_l4",
+      "adversarial_test_passed": true,
+      "safe_state_triggered": false
+    }
+  }
+}
