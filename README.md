@@ -12,7 +12,6 @@ tags:
 license: cc0-1.0
 language:
 - en
-- zh
 size_categories:
 - n<1K
 ---
