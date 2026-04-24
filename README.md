@@ -147,5 +147,3 @@ See `DISCLAIMER.md` for full text.
 
 Yuqiang Wang | yuqiang@humanjudgment.org | https://humanjudgment.org
 ```
-
----
