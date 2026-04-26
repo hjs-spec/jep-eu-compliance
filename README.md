@@ -80,7 +80,6 @@ This repository provides EU AI Act (Regulation (EU) 2024/1689) compliance mappin
 ```
 jep-eu-compliance/
 ├── README.md
-├── README.zh.md                 # 中文版本
 ├── EU_AI_ACT_MAPPING.md         # Regulation article ↔ JEP primitive mapping
 ├── DISCLAIMER.md                # Legal disclaimer (MUST READ)
 ├── LICENSE                      # MIT License
@@ -163,4 +162,3 @@ See `DISCLAIMER.md` for full text.
 ## Author
 
 Yuqiang Wang | yuqiang@humanjudgment.org | https://humanjudgment.org
-```
