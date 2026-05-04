@@ -1,0 +1,29 @@
+{
+  "jep": "1",
+  "verb": "J",
+  "who": "did:example:tmp:ai-diagnostic-agent",
+  "when": 1742345678,
+  "what": "sha256:e8878aa9a38f4d123456789abcdef0123456789abcdef0123456789abcdef0123",
+  "nonce": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+  "aud": "https://hospital.example.com",
+  "ref": null,
+  "sig": "PLACEHOLDER_DETACHED_JWS",
+  "ext": {
+    "https://jep.org/priv/digest-only": {
+      "identity_digest": "sha256:8b39f3c7d5e9a1f2g3h4j5k6l7m8n9p0q1r2s3t4u5v6w7x8y9z0",
+      "salt_provider": "did:example:hjs-trusted-anchor"
+    },
+    "https://jep-eu-compliance.org/industry/medical": {
+      "diagnosis_code": "ICD-11:2A00",
+      "input_data_hash": "sha256:a1b2c3d4e5f6789012345678901234567890abcdef1234567890abcdef123456",
+      "confidence_score": 0.94,
+      "human_review_required": true,
+      "human_reviewer_did": "did:example:tmp:doctor-456",
+      "model_version_hash": "sha256:f29bc64a96b7964da0551f3efa61e2ce964b8741234567890abcdef1234567890",
+      "mdr_class": "IIa",
+      "post_market_monitoring_id": "pm-2026-001"
+    },
+    "https://jep-eu-compliance.org/note": "Exploratory mapping note; not legal advice."
+  },
+  "ext_crit": []
+}

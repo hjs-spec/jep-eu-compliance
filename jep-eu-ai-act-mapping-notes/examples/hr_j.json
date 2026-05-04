@@ -1,0 +1,30 @@
+{
+  "jep": "1",
+  "verb": "J",
+  "who": "did:example:tmp:hr-ai-agent",
+  "when": 1742345678,
+  "what": "sha256:shortlist-output-hash-1234567890abcdef1234567890abcdef123456",
+  "nonce": "c3d4e5f6-7890-6cde-a012-345678901cde",
+  "aud": "https://corp.example.com",
+  "ref": null,
+  "sig": "PLACEHOLDER_DETACHED_JWS",
+  "ext": {
+    "https://jep.org/priv/digest-only": {
+      "identity_digest": "sha256:2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3",
+      "salt_provider": "did:example:hjs-trusted-anchor"
+    },
+    "https://jep-eu-compliance.org/industry/hr": {
+      "job_id_hash": "sha256:job-123-hash-abcdef1234567890abcdef1234567890abcdef",
+      "candidate_anon_id": "sha256:salted-id-abc-fedcba0987654321fedcba0987654321",
+      "bias_audit_flag": false,
+      "diversity_metric_hash": "sha256:diversity-report-hash-1234567890abcdef123456",
+      "human_final_decision": true,
+      "human_recruiter_did": "did:example:tmp:recruiter-321",
+      "decision_outcome": "rejected",
+      "explanation_provided": true,
+      "candidate_notification_hash": "sha256:notify-hash-abcdef1234567890abcdef123456"
+    },
+    "https://jep-eu-compliance.org/note": "Exploratory mapping note; not legal advice."
+  },
+  "ext_crit": []
+}

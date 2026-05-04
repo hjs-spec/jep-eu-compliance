@@ -1,0 +1,30 @@
+{
+  "jep": "1",
+  "verb": "J",
+  "who": "did:example:tmp:grid-ai-agent",
+  "when": 1742345678,
+  "what": "sha256:load-shift-command-hash-1234567890abcdef1234567890abcdef123456",
+  "nonce": "e5f6a7b8-9012-8efa-c234-567890123efa",
+  "aud": "https://grid.example.com",
+  "ref": null,
+  "sig": "PLACEHOLDER_DETACHED_JWS",
+  "ext": {
+    "https://jep.org/priv/digest-only": {
+      "identity_digest": "sha256:4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5",
+      "salt_provider": "did:example:hjs-trusted-anchor"
+    },
+    "https://jep-eu-compliance.org/industry/critical-infra": {
+      "infra_type": "energy_grid",
+      "system_state_hash": "sha256:scada-state-hash-abcdef1234567890abcdef1234567890ab",
+      "command_type": "load_balancing",
+      "operator_did": "did:example:tmp:operator-001",
+      "cybersecurity_threat_level": "low",
+      "physical_safety_impact": "none",
+      "redundancy_activated": false,
+      "safe_state_available": true,
+      "nist_csf_alignment": "PR.IP-1"
+    },
+    "https://jep-eu-compliance.org/note": "Exploratory mapping note; not legal advice."
+  },
+  "ext_crit": []
+}

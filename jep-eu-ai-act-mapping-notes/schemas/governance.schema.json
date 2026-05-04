@@ -1,0 +1,76 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://jep-eu-compliance.org/schemas/governance.schema.json",
+  "title": "JEP EU Compliance — Public Governance & Transparency Extension",
+  "description": "JSON Schema for JEP events in public governance under EU AI Act Article 50 and Article 52.",
+  "type": "object",
+  "properties": {
+    "disclosure_flag": {
+      "type": "boolean",
+      "description": "True if AI interaction disclosed to user"
+    },
+    "ai_interaction_notice_hash": {
+      "type": "string",
+      "description": "Hash of disclosure text",
+      "pattern": "^(sha256|sm3):[a-fA-F0-9]+$"
+    },
+    "citizen_request_hash": {
+      "type": "string",
+      "description": "Hash of citizen input (anonymized)",
+      "pattern": "^(sha256|sm3):[a-fA-F0-9]+$"
+    },
+    "synthetic_content_label": {
+      "type": "boolean",
+      "description": "True if output is AI-generated"
+    },
+    "deepfake_flag": {
+      "type": "boolean",
+      "description": "True if synthetic media mimics real person"
+    },
+    "machine_readable_mark": {
+      "type": ["string", "null"],
+      "description": "C2PA or equivalent provenance mark"
+    },
+    "citizen_consent_hash": {
+      "type": "string",
+      "description": "Hash of consent record",
+      "pattern": "^(sha256|sm3):[a-fA-F0-9]+$"
+    },
+    "data_retention_policy": {
+      "type": "string",
+      "description": "Data retention policy",
+      "enum": ["gdpr_minimal", "ai_act_6m", "national_archive"]
+    },
+    "ttl_expiry": {
+      "type": "integer",
+      "description": "Unix timestamp for auto-anonymization"
+    },
+    "fria_reference": {
+      "type": ["string", "null"],
+      "description": "FRIA ID if public sector high-risk"
+    },
+    "human_escalation_did": {
+      "type": ["string", "null"],
+      "description": "DID of human civil servant"
+    }
+  },
+  "required": [
+    "disclosure_flag",
+    "ai_interaction_notice_hash",
+    "citizen_request_hash",
+    "synthetic_content_label",
+    "deepfake_flag",
+    "citizen_consent_hash",
+    "data_retention_policy",
+    "ttl_expiry"
+  ],
+  "if": {
+    "properties": {
+      "synthetic_content_label": { "const": true }
+    }
+  },
+  "then": {
+    "required": ["machine_readable_mark"]
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://jep-eu-compliance.org/schemas/hr.schema.json",
+  "title": "JEP EU Compliance — Recruitment & HR Extension",
+  "description": "JSON Schema for JEP events in recruitment and HR under EU AI Act Annex III (4)(a).",
+  "type": "object",
+  "properties": {
+    "job_id_hash": {
+      "type": "string",
+      "description": "Hash of job description or requisition",
+      "pattern": "^(sha256|sm3):[a-fA-F0-9]+$"
+    },
+    "candidate_anon_id": {
+      "type": "string",
+      "description": "Salted hash — must not contain plaintext PII",
+      "pattern": "^(sha256|sm3):[a-fA-F0-9]+$"
+    },
+    "bias_audit_flag": {
+      "type": "boolean",
+      "description": "True if bias detected in audit"
+    },
+    "diversity_metric_hash": {
+      "type": "string",
+      "description": "Hash of diversity and equity report",
+      "pattern": "^(sha256|sm3):[a-fA-F0-9]+$"
+    },
+    "human_final_decision": {
+      "type": "boolean",
+      "description": "Must be true for Annex III compliance"
+    },
+    "human_recruiter_did": {
+      "type": "string",
+      "description": "DID of decision-making recruiter"
+    },
+    "decision_outcome": {
+      "type": "string",
+      "description": "Final hiring decision",
+      "enum": ["hired", "rejected", "interview", "on_hold"]
+    },
+    "explanation_provided": {
+      "type": "boolean",
+      "description": "GDPR Art. 22 plus transparency requirement"
+    },
+    "candidate_notification_hash": {
+      "type": "string",
+      "description": "Hash of notification sent to candidate",
+      "pattern": "^(sha256|sm3):[a-fA-F0-9]+$"
+    }
+  },
+  "required": [
+    "job_id_hash",
+    "candidate_anon_id",
+    "diversity_metric_hash",
+    "human_final_decision",
+    "human_recruiter_did",
+    "decision_outcome",
+    "explanation_provided",
+    "candidate_notification_hash"
+  ],
+  "additionalProperties": false
+}

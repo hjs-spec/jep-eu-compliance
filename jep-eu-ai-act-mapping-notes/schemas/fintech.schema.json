@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://jep-eu-compliance.org/schemas/fintech.schema.json",
+  "title": "JEP EU Compliance — Credit Scoring & FinTech Extension",
+  "description": "JSON Schema for JEP events in credit scoring and financial services under EU AI Act Annex III (5)(b).",
+  "type": "object",
+  "properties": {
+    "decision_type": {
+      "type": "string",
+      "description": "Type of financial decision",
+      "enum": ["credit_scoring", "creditworthiness", "insurance_risk", "fraud_detection"]
+    },
+    "model_version_hash": {
+      "type": "string",
+      "description": "Hash of model version manifest",
+      "pattern": "^(sha256|sm3):[a-fA-F0-9]+$"
+    },
+    "feature_importance_hash": {
+      "type": "string",
+      "description": "Hash of explainability output (SHAP, LIME)",
+      "pattern": "^(sha256|sm3):[a-fA-F0-9]+$"
+    },
+    "adverse_action_notice": {
+      "type": "boolean",
+      "description": "True if decision is negative"
+    },
+    "gdpr_art22_compliant": {
+      "type": "boolean",
+      "description": "Evidence of human intervention right under GDPR Article 22"
+    },
+    "applicant_consent_hash": {
+      "type": "string",
+      "description": "Hash of consent record",
+      "pattern": "^(sha256|sm3):[a-fA-F0-9]+$"
+    },
+    "bias_audit_flag": {
+      "type": "boolean",
+      "description": "True if bias detected in post-hoc audit"
+    },
+    "human_loan_officer_did": {
+      "type": ["string", "null"],
+      "description": "DID of reviewing officer"
+    },
+    "explanation_hash": {
+      "type": "string",
+      "description": "Hash of human-readable explanation",
+      "pattern": "^(sha256|sm3):[a-fA-F0-9]+$"
+    }
+  },
+  "required": [
+    "decision_type",
+    "model_version_hash",
+    "feature_importance_hash",
+    "adverse_action_notice",
+    "gdpr_art22_compliant",
+    "applicant_consent_hash",
+    "explanation_hash"
+  ],
+  "if": {
+    "properties": {
+      "adverse_action_notice": { "const": true }
+    }
+  },
+  "then": {
+    "required": ["human_loan_officer_did"]
+  },
+  "additionalProperties": false
+}
